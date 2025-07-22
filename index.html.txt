@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>AimlockMkhanhCuti - Menu Nâng Cao</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+  /* Background gradient animation */
+  body {
+    margin:0; font-family: 'Inter', sans-serif; background: linear-gradient(270deg, #1e1e38, #25254a, #1e1e38, #3c3c6e);
+    background-size: 800% 800%;
+    animation: gradientBG 20s ease infinite;
+    color:#eee; -webkit-font-smoothing: antialiased;
+  }
+  @keyframes gradientBG {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+  }
+
+  header {
+    background: rgba(37, 37, 74, 0.8);
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1.1px;
+    user-select:none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    backdrop-filter: blur(8px);
+  }
+  main {
+    max-width: 480px;
+    margin: 1rem auto;
+    padding: 0 1rem 3rem 1rem;
+    background: rgba(30,30,56,0.7);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(60,60,110,0.6);
+  }
+  .desc {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #bbb;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .group {
+    background: rgba(43,43,75,0.85);
+    border-radius: 10px;
+    margin-bottom: 1.4rem;
+    box-shadow: 0 0 12px rgba(58,56,84,0.6);
+    padding: 0.8rem 1rem;
+  }
+  .group h2 {
+    margin: 0 0 0.8rem 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #454571;
+    padding-bottom: 0.4rem;
+    user-select:none;
+  }
+  .toggle-list {
+    list-style:none;
+    padding: 0; margin: 0;
+  }
+  .toggle-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 0.6rem;
+    background: rgba(43,43,75,0.7);
+    cursor: pointer;
+    transition: background 0.3s;
+    user-select:none;
+  }
+  .toggle-list li:hover {
+    background: rgba(60,60,110,0.9);
+  }
+  .toggle-list label {
+    flex: 1;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .toggle-list .info {
+    font-size: 0.8rem;
+    color: #99aaffcc;
+    display: none;
+    padding-top: 0.2rem;
+    line-height: 1.3;
+  }
+  .toggle-list li.expanded .info {
+    display: block;
+  }
+  /* Switch toggle styling */
+  .switch {
+    position: relative;
+    width: 46px;
+    height: 24px;
+  }
+  .switch input {
+    opacity: 0;
+    width: 0; height: 0;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #666;
+    border-radius: 24px;
+    transition: 0.4s;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.4);
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  input:checked + .slider {
+    background-color: #4cd137;
+    box-shadow: 0 0 10px #4cd137;
+  }
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    padding: 1rem 0 0.4rem;
+    user-select:none;
+  }
+  footer .credit {
+    font-weight: 600;
+    color: #4cd137;
+    font-size: 1rem;
+    margin-top: 4px;
+  }
+  button#resetBtn {
+    background: #ff4757;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select:none;
+    box-shadow: 0 0 8px #ff6b81;
+    transition: background-color 0.3s;
+    margin: 0 auto 2rem auto;
+    display: block;
+  }
+  button#resetBtn:hover {
+    background: #ff6b81;
+  }
+</style>
+</head>
+<body>
+<header>AimlockMkhanhCuti - Menu Nâng Cao</header>
+<main>
+  <div class="desc">
+    Aimlock giúp anh em cải thiện headshot – kéo tâm mượt – fix rung, fix lố. Make by mkhanhscutis1 💕
+  </div>
+
+  <section class="group">
+    <h2>DPI & Hiệu chỉnh</h2>
+    <ul class="toggle-list">
+      <li data-id="dpi">
+        <label>DPI nhẹ tâm</label>
+        <div class="switch">
+          <input type="checkbox" id="dpi" />
+          <span class="slider"></span>
+        </div>
+        <div class="info">Điều chỉnh độ nhạy và độ chính xác của tâm bắn.</div>
+      </li>
+      <li data-id="vibrastab">
+        <label>Fix rung</label>
+        <div class="switch">
+          <input type="checkbox" id="vibrastab" />
+          <span class="slider"></span>
+        </div>
+        <div class="info">Ổn định rung khi thao tác kéo tâm.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="group">
+    <h2>Aimlock & Hỗ trợ bắn</h2>
+    <ul class="toggle-list">
+      <li data-id="aimlock">
+        <label>Aimlock</label>
+        <div class="switch">
+          <input type="checkbox" id="aimlock" />
+          <span class="slider"></span>
+        </div>
+        <div class="info">Tự động khóa mục tiêu, dễ dàng headshot.</div>
+      </li>
+      <li data-id="aimhead">
+        <label>Aim Head</label>
+        <div class="switch">
+          <input type="checkbox" id="aimhead" />
+          <span class="slider"></span>
+        </div>
+        <div class="info">Ưu tiên bắn vào đầu đối thủ.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="group">
+    <h2>Hiệu năng & Fix lỗi</h2>
+    <ul class="toggle-list">
+      <li data-id="fixlag">
+        <label>Fix Lag</label>
+        <div class="switch">
+          <input type="checkbox" id="fixlag" />
+          <span class="slider"></span>
+        </div>
+        <div class="info">Tối ưu giảm lag, giúp chơi mượt hơn.</div>
+      </li>
+    </ul>
+  </section>
+
+  <button id="resetBtn" aria-label="Reset all toggles">Reset tất cả</button>
+
+</main>
+<footer>
+  Make by mkhanhscutis1 – Phiên bản nâng cao web‑clip
+  <div class="credit">Make bởi mkhanhscuti💕</div>
+</footer>
+
+<script>
+  const toggles = Array.from(document.querySelectorAll('.toggle-list li'));
+  // Load trạng thái từ localStorage
+  toggles.forEach(li => {
+    const id = li.dataset.id;
+    const checkbox = li.querySelector('input[type="checkbox"]');
+    if (!id || !checkbox) return;
+    const saved = localStorage.getItem('alc_' + id);
+    checkbox.checked = saved === '1';
+
+    // Ghi trạng thái khi thay đổi
+    checkbox.addEventListener('change', () => {
+      localStorage.setItem('alc_' + id, checkbox.checked ? '1' : '0');
+      console.log('Toggled', id, checkbox.checked);
+    });
+
+    // Toggle hiển thị mô tả khi bấm vào label hoặc li
+    li.addEventListener('click', e => {
+      if (e.target.tagName === 'INPUT') return; // tránh toggle khi nhấn checkbox
+      toggles.forEach(other => {
+        if (other !== li) other.classList.remove('expanded');
+      });
+      li.classList.toggle('expanded');
+    });
+  });
+
+  // Reset button
+  const resetBtn = document.getElementById('resetBtn');
+  resetBtn.addEventListener('click', () => {
+    toggles.forEach(li => {
+      const id = li.dataset.id;
+      const checkbox = li.querySelector('input[type="checkbox"]');
+      if (!id || !checkbox) return;
+      checkbox.checked = false;
+      localStorage.setItem('alc_' + id, '0');
+      li.classList.remove('expanded');
+    });
+    console.log('All toggles reset');
+  });
+</script>
+</body>
+</html>
